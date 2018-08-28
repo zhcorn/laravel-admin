@@ -101,7 +101,7 @@ class PermissionController extends Controller
                 $method = collect($method)->map(function ($name) {
                     return strtoupper($name);
                 })->map(function ($name) {
-                    return "<span class='label label-primary'>{$name}</span>";
+                    return "<span class='badge bg-primary'>{$name}</span>";
                 })->implode('&nbsp;');
 
                 $path = '/'.trim(config('admin.route.prefix'), '/').$path;
@@ -149,7 +149,7 @@ class PermissionController extends Controller
                 $method = collect($method)->map(function ($name) {
                     return strtoupper($name);
                 })->map(function ($name) {
-                    return "<span class='label label-primary'>{$name}</span>";
+                    return "<span class='badge bg-primary'>{$name}</span>";
                 })->implode('&nbsp;');
 
                 $path = '/'.trim(config('admin.route.prefix'), '/').$path;

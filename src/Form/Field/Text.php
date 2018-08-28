@@ -17,6 +17,7 @@ class Text extends Field
     {
         $this->initPlainInput();
 
+
         $this->prepend('<i class="fa fa-pencil fa-fw"></i>')
             ->defaultAttribute('type', 'text')
             ->defaultAttribute('id', $this->id)

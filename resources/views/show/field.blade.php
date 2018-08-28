@@ -3,10 +3,10 @@
     <div class="col-sm-8">
         @if($wrapped)
         <div class="box box-solid box-default no-margin box-show">
-            <!-- /.box-header -->
-            <div class="box-body">
+            <!-- /.card-header -->
+            <div class=box-body">
                 {!! $content !!}&nbsp;
-            </div><!-- /.box-body -->
+            </div><!-- /.card-body -->
         </div>
         @else
             {!! $content !!}

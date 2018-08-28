@@ -1,5 +1,5 @@
 <form {!! $attributes !!}>
-    <div class="box-body fields-group">
+    <div class=card-body fields-group">
 
         @foreach($fields as $field)
             {!! $field->render() !!}
@@ -8,7 +8,7 @@
     </div>
 
     <!-- /.box-body -->
-    <div class="box-footer">
+    <div class=card-footer">
     @if ($method != 'GET')
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     @endif

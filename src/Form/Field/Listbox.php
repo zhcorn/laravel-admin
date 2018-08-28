@@ -41,6 +41,12 @@ class Listbox extends MultipleSelect
         $this->script = <<<SCRIPT
 
 $("{$this->getElementClassSelector()}").bootstrapDualListbox($settings);
+    var dualListContainer = $('{$this->getElementClassSelector()}').bootstrapDualListbox('getContainer');
+    dualListContainer.find('.moveall i').removeClass().addClass('fa fa-arrow-right');
+    dualListContainer.find('.removeall i').removeClass().addClass('fa fa-arrow-left');
+    dualListContainer.find('.move i').removeClass().addClass('fa fa-arrow-right');
+    dualListContainer.find('.remove i').removeClass().addClass('fa fa-arrow-left');
+
 
 SCRIPT;
 

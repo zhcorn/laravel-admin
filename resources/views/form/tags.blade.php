@@ -1,10 +1,8 @@
-<div class="{{$viewClass['form-group']}} {!! !$errors->has($errorKey) ? '' : 'has-error' !!}">
+<div class="{{$viewClass['form-group']}} row {!! !$errors->has($errorKey) ? '' : 'has-error' !!}">
 
-    <label for="{{$id}}" class="{{$viewClass['label']}} control-label">{{$label}}</label>
+    <label for="{{$id}}" class="{{$viewClass['label']}} text-right control-label">{{$label}}</label>
 
     <div class="{{$viewClass['field']}}">
-
-        @include('admin::form.error')
 
         <select class="form-control {{$class}}" style="width: 100%;" name="{{$name}}[]" multiple="multiple" data-placeholder="{{ $placeholder }}" {!! $attributes !!} >
 
@@ -13,6 +11,7 @@
             @endforeach
 
         </select>
+        @include('admin::form.error')
         <input type="hidden" name="{{$name}}[]" />
 
         @include('admin::form.help-block')

@@ -11,7 +11,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/font-awesome/css/font-awesome.min.css") }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/dist/css/AdminLTE.min.css") }}">
+  <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/login/css/login.min.css") }}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/plugins/iCheck/square/blue.css") }}">
 
@@ -22,58 +22,52 @@
   <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition login-page" @if(config('admin.login_background_image'))style="background: url({{config('admin.login_background_image')}}) no-repeat;background-size: cover;"@endif>
-<div class="login-box">
-  <div class="login-logo">
-    <a href="{{ admin_base_path('/') }}"><b>{{config('admin.name')}}</b></a>
+
+<body class="login">
+<div class="form-signin">
+  <div class="text-center">
+    <!--<img src="assets/img/logo.png" alt="Metis Logo"> LOGO-->
+    <h1>
+      <a href="{{ admin_base_path('/') }}"><b>{{config('admin.name')}}</b></a>
+    </h1>
   </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">{{ trans('admin.login') }}</p>
-
-    <form action="{{ admin_base_path('auth/login') }}" method="post">
-      <div class="form-group has-feedback {!! !$errors->has('username') ?: 'has-error' !!}">
-
-        @if($errors->has('username'))
-          @foreach($errors->get('username') as $message)
-            <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>{{$message}}</label></br>
-          @endforeach
-        @endif
-
-        <input type="input" class="form-control" placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
-
-        @if($errors->has('password'))
-          @foreach($errors->get('password') as $message)
-            <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>{{$message}}</label></br>
-          @endforeach
-        @endif
-
-        <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}" name="password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-
-        <!-- /.col -->
-        <div class="col-xs-4 col-md-offset-4">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('admin.login') }}</button>
+  <hr>
+  <div class="tab-content">
+    <div id="login" class="tab-pane active">
+      <p class="text-muted text-center">
+        {{ trans('admin.login') }}
+      </p>
+      <form action="{{ admin_base_path('auth/login') }}" method="post">
+        {{ csrf_field() }}
+        <div class="form-group field-loginform-username">
+          <label class="control-label" for="loginform-username">{{trans('admin.username')}}</label>
+          <input type="text" id="loginform-username" value="{{ old('username') }}" placeholder="{{trans('admin.username')}}" class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" name="username">
+          @if ($errors->has('username'))
+            <div class="invalid-feedback">
+              {{ $errors->first('username') }}
+            </div>
+          @endif
         </div>
-        <!-- /.col -->
-      </div>
-    </form>
-
+        <div class="form-group field-loginform-password">
+          <label class="control-label" for="loginform-password">{{ trans('admin.password') }}</label>
+          <input type="password" id="loginform-password" class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" name="password" placeholder="{{trans('admin.password')}}">
+          @if ($errors->has('password'))
+            <div class="invalid-feedback">
+              {{ $errors->first('password') }}
+            </div>
+          @endif
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" name="login-button">{{ trans('admin.login') }}</button>
+      </form>
+    </div>
   </div>
-  <!-- /.login-box-body -->
+  <hr>
 </div>
-<!-- /.login-box -->
-
+</body>
 <!-- jQuery 2.1.4 -->
-<script src="{{ admin_asset("/vendor/laravel-admin/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js")}} "></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="{{ admin_asset("/vendor/laravel-admin/AdminLTE/bootstrap/js/bootstrap.min.js")}}"></script>
+<script src="{{ admin_asset ("/vendor/laravel-admin/AdminLTE/plugins/jQuery/jQuery-3.3.1.min.js") }}"></script>
+<!-- Bootstrap 4.0.0 -->
+<script src="{{ admin_asset ("/vendor/laravel-admin/AdminLTE/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
 <!-- iCheck -->
 <script src="{{ admin_asset("/vendor/laravel-admin/AdminLTE/plugins/iCheck/icheck.min.js")}}"></script>
 <script>

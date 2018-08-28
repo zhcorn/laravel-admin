@@ -16,7 +16,8 @@ class MultipleFile extends Field
      * @var array
      */
     protected static $css = [
-        '/vendor/laravel-admin/bootstrap-fileinput/css/fileinput.min.css?v=4.3.7',
+        '/vendor/laravel-admin/bootstrap-fileinput/css/fileinput.min.css?v=4.5.0',
+        '/vendor/laravel-admin/bootstrap-fileinput/css/themes/fa/theme.min.css?v=4.5.0'
     ];
 
     /**
@@ -25,8 +26,9 @@ class MultipleFile extends Field
      * @var array
      */
     protected static $js = [
-        '/vendor/laravel-admin/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js?v=4.3.7',
-        '/vendor/laravel-admin/bootstrap-fileinput/js/fileinput.min.js?v=4.3.7',
+        '/vendor/laravel-admin/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js?v=4.5.0',
+        '/vendor/laravel-admin/bootstrap-fileinput/js/fileinput.min.js?v=4.5.0',
+        '/vendor/laravel-admin/bootstrap-fileinput/js/themes/fa/theme.min.js?v=4.5.0',
     ];
 
     /**

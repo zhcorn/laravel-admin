@@ -1,11 +1,11 @@
-<div class="box">
+<div class="card card-info card-outline">
     @if(isset($title))
-    <div class="box-header with-border">
-        <h3 class="box-title"> {{ $title }}</h3>
+    <div class="card-header">
+        <h3 class="card-title"> {{ $title }}</h3>
     </div>
     @endif
 
-    <div class="box-header with-border">
+    <div class="card-header with-border">
         <div class="pull-right">
             {!! $grid->renderExportButton() !!}
             {!! $grid->renderCreateButton() !!}
@@ -18,8 +18,8 @@
     {!! $grid->renderFilter() !!}
 
     <!-- /.box-header -->
-    <div class="box-body table-responsive no-padding">
-        <table class="table table-hover">
+    <div class="card-body ">
+        <table class="table table-hover table-bordered table-striped dataTable">
             <thead>
                 <tr>
                     @foreach($grid->columns() as $column)
@@ -44,7 +44,7 @@
 
         </table>
     </div>
-    <div class="box-footer clearfix">
+    <div class="card-footer clearfix">
         {!! $grid->paginator() !!}
     </div>
     <!-- /.box-body -->

@@ -48,6 +48,17 @@ class DateRange extends Field
     public function render()
     {
         $this->options['locale'] = config('app.locale');
+        $this->options['icons']=[
+            'time'=>'fa fa-clock-o',
+            'date'=>'fa fa-calendar',
+            'up'=>'fa fa-arrow-up',
+            'down'=>'fa fa-arrow-down',
+            'previous'=>'fa fa-chevron-left',
+            'next'=>'fa fa-chevron-right',
+            'today'=>'fa fa-calendar-check',
+            'clear'=>'fa fa-trash-alt',
+            'close'=>'fa fa-times-circle',
+        ];
 
         $startOptions = json_encode($this->options);
         $endOptions = json_encode($this->options + ['useCurrent' => false]);

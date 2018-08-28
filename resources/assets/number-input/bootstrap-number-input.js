@@ -52,12 +52,12 @@
             var up = $("<button type='button'>+</button>").attr('class', 'btn btn-' + settings.upClass).click(function () {
                 setText(parseInt(clone.val()) + 1);
             });
-            $("<span class='input-group-btn'></span>").append(down).appendTo(group);
+            $("<span class='input-group-prepend'></span>").append(down).appendTo(group);
             clone.appendTo(group);
             if (clone) {
                 clone.css('text-align', 'center');
             }
-            $("<span class='input-group-btn'></span>").append(up).appendTo(group);
+            $("<span class='input-group-append'></span>").append(up).appendTo(group);
 
             // remove spins from original
             clone.prop('type', 'text').keydown(function (e) {

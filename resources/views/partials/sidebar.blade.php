@@ -1,40 +1,32 @@
-<aside class="main-sidebar">
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar elevation-4 sidebar-dark-info">
+    <!-- Brand Logo -->
+    <a href="{{ admin_base_path('/') }}" class="brand-link bg-info">
+        {!! config('admin.logo-mini', config('admin.name')) !!}
+        <span class="brand-text font-weight-light">{!! config('admin.logo', config('admin.name')) !!}</span>
+    </a>
 
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-
+    <!-- Sidebar -->
+    <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-            <div class="pull-left image">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
                 <img src="{{ Admin::user()->avatar }}" class="img-circle" alt="User Image">
             </div>
-            <div class="pull-left info">
-                <p>{{ Admin::user()->name }}</p>
-                <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('admin.online') }}</a>
+            <div class="info">
+                <a href="#" class="d-block">{{ Admin::user()->name }}</a>
             </div>
         </div>
-
-        <!-- search form (Optional) -->
-        <!--<form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-        </form>-->
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
-            <li class="header">{{ trans('admin.menu') }}</li>
-
-            @each('admin::partials.menu', Admin::menu(), 'item')
-
-        </ul>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                @each('admin::partials.menu', Admin::menu(), 'item')
+            </ul>
+        </nav>
         <!-- /.sidebar-menu -->
-    </section>
+    </div>
     <!-- /.sidebar -->
 </aside>

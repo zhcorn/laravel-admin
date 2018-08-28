@@ -1,10 +1,8 @@
-<div class="{{$viewClass['form-group']}} {!! !$errors->has($column) ?: 'has-error' !!}">
+<div class="{{$viewClass['form-group']}} row {!! !$errors->has($column) ?'': 'has-error' !!}">
 
-    <label for="{{$id}}" class="{{$viewClass['label']}} control-label">{{$label}}</label>
+    <label for="{{$id}}" class="{{$viewClass['label']}} text-right control-label">{{$label}}</label>
 
     <div class="{{$viewClass['field']}}" id="{{$id}}">
-
-        @include('admin::form.error')
 
         @foreach($options as $option => $label)
             @if(!$inline)<div class="checkbox">@endif
@@ -13,6 +11,8 @@
             </label>
             @if(!$inline)</div>@endif
         @endforeach
+
+        @include('admin::form.error')
 
         <input type="hidden" name="{{$name}}[]">
 

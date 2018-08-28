@@ -1,24 +1,34 @@
-<div class="{{$viewClass['form-group']}} {!! !$errors->has($errorKey) ? '' : 'has-error' !!}">
+<div class="{{$viewClass['form-group']}} row {!! !$errors->has($column) ?'': 'has-error' !!}">
 
-    <label for="{{$id}}" class="{{$viewClass['label']}} control-label">{{$label}}</label>
+    <label for="{{$id}}" class="{{$viewClass['label']}} text-right control-label">{{$label}}</label>
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin::form.error')
-
-        <div class="input-group">
+        @php
+            $width = "auto";
+            if(preg_match("/width:(?<width>.*)px/",$attributes,$attribute)){
+                $width = intval($attribute["width"])+100;
+                $width.="px";
+            }
+        @endphp
+        <div class="input-group" style="width: {{$width}};">
 
             @if ($prepend)
-            <span class="input-group-addon">{!! $prepend !!}</span>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">{!! $prepend !!}</span>
+                </div>
             @endif
 
             <input {!! $attributes !!} />
 
             @if ($append)
-                <span class="input-group-addon clearfix">{!! $append !!}</span>
+                <div class="input-group-append">
+                    <span class="input-group-text">{!! $append !!}</span>
+                </div>
             @endif
 
         </div>
+        @include('admin::form.error')
 
         @include('admin::form.help-block')
 

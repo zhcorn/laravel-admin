@@ -71,21 +71,21 @@ class Links
 <li>
     <a href="#">
       <i class="fa fa-envelope-o"></i>
-      <span class="label label-success">4</span>
+      <span class="badge bg-success">4</span>
     </a>
 </li>
 
 <li>
     <a href="#">
       <i class="fa fa-bell-o"></i>
-      <span class="label label-warning">7</span>
+      <span class="badge bg-warning">7</span>
     </a>
 </li>
 
 <li>
     <a href="#">
       <i class="fa fa-flag-o"></i>
-      <span class="label label-danger">9</span>
+      <span class="badge bg-danger">9</span>
     </a>
 </li>
 
@@ -104,7 +104,7 @@ Or use the following html to add a drop-down menu:
 <li class="dropdown notifications-menu">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
   <i class="fa fa-bell-o"></i>
-  <span class="label label-warning">10</span>
+  <span class="badge bg-warning">10</span>
 </a>
 <ul class="dropdown-menu">
   <li class="header">You have 10 notifications</li>

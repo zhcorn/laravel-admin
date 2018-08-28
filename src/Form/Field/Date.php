@@ -36,8 +36,19 @@ class Date extends Text
         $this->options['format'] = $this->format;
         $this->options['locale'] = config('app.locale');
         $this->options['allowInputToggle'] = true;
+        $this->options['icons']=[
+            'time'=>'fa fa-clock-o',
+            'date'=>'fa fa-calendar',
+            'up'=>'fa fa-arrow-up',
+            'down'=>'fa fa-arrow-down',
+            'previous'=>'fa fa-chevron-left',
+            'next'=>'fa fa-chevron-right',
+            'today'=>'fa fa-calendar-check',
+            'clear'=>'fa fa-trash-alt',
+            'close'=>'fa fa-times-circle',
+        ];
 
-        $this->script = "$('{$this->getElementClassSelector()}').parent().datetimepicker(".json_encode($this->options).');';
+        $this->script = "$('{$this->getElementClassSelector()}').datetimepicker(".json_encode($this->options).');';
 
         $this->prepend('<i class="fa fa-calendar fa-fw"></i>')
             ->defaultAttribute('style', 'width: 110px');

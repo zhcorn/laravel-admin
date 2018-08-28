@@ -69,15 +69,15 @@ SCRIPT;
         return <<<EOT
 
 <div class="btn-group pull-right" style="margin-right: 10px">
-    <a class="btn btn-sm btn-twitter"><i class="fa fa-download"></i> {$export}</a>
+    <a href="#" class="btn btn-sm btn-twitter"><i class="fa fa-download"></i> {$export}</a>
     <button type="button" class="btn btn-sm btn-twitter dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
     </button>
     <ul class="dropdown-menu" role="menu">
-        <li><a href="{$this->grid->getExportUrl('all')}" target="_blank">{$all}</a></li>
-        <li><a href="{$this->grid->getExportUrl('page', $page)}" target="_blank">{$currentPage}</a></li>
-        <li><a href="{$this->grid->getExportUrl('selected', '__rows__')}" target="_blank" class='{$this->grid->getExportSelectedName()}'>{$selectedRows}</a></li>
+        <li><a class="dropdown-item" href="{$this->grid->getExportUrl('all')}" target="_blank">{$all}</a></li>
+        <li><a class="dropdown-item" href="{$this->grid->getExportUrl('page', $page)}" target="_blank">{$currentPage}</a></li>
+        <li><a class="dropdown-item" href="{$this->grid->getExportUrl('selected', '__rows__')}" target="_blank" class='{$this->grid->getExportSelectedName()}'>{$selectedRows}</a></li>
     </ul>
 </div>
 EOT;

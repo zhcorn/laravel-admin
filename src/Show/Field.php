@@ -287,7 +287,7 @@ HTML;
             }
 
             return collect((array) $value)->map(function ($name) use ($style) {
-                return "<span class='label label-{$style}'>$name</span>";
+                return "<span class='badge bg-{$style}'>$name</span>";
             })->implode('&nbsp;');
         });
     }

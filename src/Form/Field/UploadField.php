@@ -66,6 +66,7 @@ trait UploadField
             'browseLabel'          => trans('admin.browse'),
             'showRemove'           => false,
             'showUpload'           => false,
+            'theme'                => 'fa',
 //            'initialCaption'       => $this->initialCaption($this->value),
             'deleteExtraData' => [
                 $this->formatName($this->column) => static::FILE_DELETE_FLAG,

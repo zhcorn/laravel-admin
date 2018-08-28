@@ -24,7 +24,7 @@ $('{$this->getElementClassSelector()}:not(.initialized)')
 
 EOT;
 
-        $this->prepend('')->defaultAttribute('style', 'width: 100px');
+        $this->prepend('')->defaultAttribute('style', 'width: 200px');
 
         return parent::render();
     }

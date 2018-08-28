@@ -1,23 +1,25 @@
 @if(Admin::user()->visible($item['roles']))
     @if(!isset($item['children']))
-        <li>
+        <li class="nav-item">
             @if(url()->isValidUrl($item['uri']))
-                <a href="{{ $item['uri'] }}" target="_blank">
+                <a class="nav-link" href="{{ $item['uri'] }}" target="_blank">
             @else
-                 <a href="{{ admin_base_path($item['uri']) }}">
+                 <a class="nav-link" href="{{ admin_base_path($item['uri']) }}">
             @endif
                 <i class="fa {{$item['icon']}}"></i>
-                <span>{{$item['title']}}</span>
+                <p>{{$item['title']}}</p>
             </a>
         </li>
     @else
-        <li class="treeview">
-            <a href="#">
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
                 <i class="fa {{$item['icon']}}"></i>
-                <span>{{$item['title']}}</span>
-                <i class="fa fa-angle-left pull-right"></i>
+                <p>
+                    {{$item['title']}}
+                    <i class="fa fa-angle-left right"></i>
+                </p>
             </a>
-            <ul class="treeview-menu">
+            <ul class="nav nav-treeview">
                 @foreach($item['children'] as $item)
                     @include('admin::partials.menu', $item)
                 @endforeach

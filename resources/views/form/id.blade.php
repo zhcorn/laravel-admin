@@ -1,5 +1,5 @@
-<div class="{{$viewClass['form-group']}}">
-    <label for="{{$id}}" class="{{$viewClass['label']}} control-label">{{$label}}</label>
+<div class="{{$viewClass['form-group']}} row">
+    <label for="{{$id}}" class="{{$viewClass['label']}} text-right control-label">{{$label}}</label>
 
     <div class="{{$viewClass['field']}}">
         <input type="text" id="{{$id}}" name="{{$name}}" value="{{$value}}" class="form-control" readonly {!! $attributes !!} />
