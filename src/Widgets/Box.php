@@ -42,7 +42,7 @@ class Box extends Widget implements Renderable
             $this->content($content);
         }
 
-        $this->class('box');
+        $this->class('card card-outline');
     }
 
     /**
@@ -85,7 +85,7 @@ class Box extends Widget implements Renderable
     public function collapsable()
     {
         $this->tools[] =
-            '<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>';
+            '<button class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>';
 
         return $this;
     }
@@ -98,7 +98,7 @@ class Box extends Widget implements Renderable
     public function removable()
     {
         $this->tools[] =
-            '<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>';
+            '<button class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i></button>';
 
         return $this;
     }
@@ -117,7 +117,7 @@ class Box extends Widget implements Renderable
         }
 
         $styles = array_map(function ($style) {
-            return 'box-'.$style;
+            return 'card-'.$style;
         }, $styles);
 
         $this->class = $this->class.' '.implode(' ', $styles);

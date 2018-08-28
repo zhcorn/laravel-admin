@@ -196,8 +196,8 @@
 
     /** start 当前url等于标签中的url时 添加 active class 但这个方法不适用于 pjax**/
     var url = window.location.href.replace("http://", "");
-    url = url.substr(url.indexOf("/") + 1, url.length).replace(/(\w+)\/(\w+)\/(\w+)(\/|\?){0,1}(.*)/ig, "$1/$2");
-    //console.log(url);
+    url = url.substr(url.indexOf("/") + 1, url.length).replace(/(\w+)\/(\w+)\/(\w+)(\/|\?){0,1}(.*)/ig, "$1/$2/$3");
+    console.log(url);
     var meUrl;
     $(".nav-item").each(function () {
         var outThis = $(this);
@@ -205,8 +205,8 @@
         outThis.children().first().removeClass("active");
         $(this).find("a").each(function () {
             meUrl = $(this).attr("href").replace("http://", "");
-            meUrl = meUrl.substr(meUrl.indexOf("/") + 1, meUrl.length).replace(/(\w+)\/(\w+)\/(\w+)(\/|\?){0,1}(.*)/ig, "$1/$2");
-            //console.log(meUrl);
+            meUrl = meUrl.substr(meUrl.indexOf("/") + 1, meUrl.length).replace(/(\w+)\/(\w+)\/(\w+)(\/|\?){0,1}(.*)/ig, "$1/$2/$3");
+            console.log(meUrl);
             if (meUrl == url) {
                 //if(url.indexOf(meUrl)>-1){
                 outThis.addClass("menu-open").show();

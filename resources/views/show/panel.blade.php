@@ -1,8 +1,8 @@
 <div class="card card-{{ $style }}">
-    <div class=card-header with-border">
-        <h3 class=card-title">{{ $title }}</h3>
+    <div class="card-header with-border">
+        <h3 class="card-title">{{ $title }}</h3>
 
-        <div class=card-tools">
+        <div class="card-tools">
             {!! $tools !!}
         </div>
     </div>
@@ -10,7 +10,7 @@
     <!-- form start -->
     <div class="form-horizontal">
 
-        <div class=card-body">
+        <div class="card-body">
 
             <div class="fields-group">
 

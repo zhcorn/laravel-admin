@@ -12,7 +12,6 @@
     @else
         {!! $form->open(['class' => "form-horizontal"]) !!}
     @endif
-
         <div class="card-body">
             @if(!$tabObj->isEmpty())
                 @include('admin::form.tab', compact('tabObj'))
