@@ -1314,6 +1314,7 @@ class Form implements Renderable
             'multipleImage'  => Field\MultipleImage::class,
             'captcha'        => Field\Captcha::class,
             'listbox'        => Field\Listbox::class,
+            'keyvaluetext'   => Field\KeyValueText::class,
         ];
 
         foreach ($map as $abstract => $class) {
