@@ -1315,6 +1315,7 @@ class Form implements Renderable
             'captcha'        => Field\Captcha::class,
             'listbox'        => Field\Listbox::class,
             'keyvaluetext'   => Field\KeyValueText::class,
+            'editableSelect' => Field\EditableSelect::class,
         ];
 
         foreach ($map as $abstract => $class) {
