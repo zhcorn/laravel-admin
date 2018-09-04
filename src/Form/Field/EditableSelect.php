@@ -121,10 +121,6 @@ class EditableSelect extends Field
 
         $configs = json_encode($configs);
 
-        if (empty($this->script)) {
-            $this->script = "$(\"{$this->getElementClassSelector()}\").editableSelect($configs);";
-        }
-
         if ($this->options instanceof \Closure) {
             if ($this->form) {
                 $this->options = $this->options->bindTo($this->form->model());
@@ -139,6 +135,18 @@ class EditableSelect extends Field
             'options' => $this->options,
             'groups'  => $this->groups,
         ]);
+
+        if (empty($this->script)) {
+            $this->script = <<<EOT
+
+$("{$this->getElementClassSelector()}").editableSelect($configs);
+$("{$this->getElementClassSelector()}").on('select.editable-select', function (e, dom) {
+    if(dom){
+	    $("input:hidden[name='{$this->id}']").val(dom.val());
+	}
+});
+EOT;
+        }
 
         return parent::render();
     }
