@@ -21,7 +21,6 @@
             @endif
         </select>
 
-        <input type="hidden" name="{{$name}}"/>
         @include('admin::form.error')
 
         @include('admin::form.help-block')

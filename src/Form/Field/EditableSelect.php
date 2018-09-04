@@ -140,12 +140,15 @@ class EditableSelect extends Field
             $this->script = <<<EOT
 
 $("{$this->getElementClassSelector()}").editableSelect($configs);
-$("{$this->getElementClassSelector()}").on('select.editable-select', function (e, dom) {
-    if(dom){
-	    $("input:hidden[name='{$this->id}']").val(dom.val());
-	}
-});
+
 EOT;
+            /**
+             * $("{$this->getElementClassSelector()}").on('select.editable-select', function (e, dom) {
+             *       if(dom){
+             *           $("input:hidden[name='{$this->id}']").val(dom.val());
+             *       }
+             *   });
+             */
         }
 
         return parent::render();
