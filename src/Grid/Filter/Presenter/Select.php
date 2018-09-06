@@ -53,7 +53,8 @@ class Select extends Presenter
 
             $this->script = <<<SCRIPT
 $(".{$this->getElementClass()}").select2({
-  placeholder: "$placeholder"
+  placeholder: "$placeholder",
+  allowClear:true,
 });
 
 SCRIPT;
@@ -103,6 +104,7 @@ EOT;
 
 $(".{$this->getElementClass()}").select2({
   placeholder: "$placeholder",
+  allowClear:true,
   ajax: {
     url: "$resourceUrl",
     dataType: 'json',
