@@ -107,7 +107,14 @@ class Between extends AbstractFilter
         $options['format'] = array_get($options, 'format', 'YYYY-MM-DD HH:mm:ss');
         $options['locale'] = array_get($options, 'locale', config('app.locale'));
 
+        $endDefaultDate = "";
+        if(isset($options["endDefaultDate"])) {
+            $endDefaultDate = $options["endDefaultDate"];
+            unset($options["endDefaultDate"]);
+        }
         $startOptions = json_encode($options);
+        if($endDefaultDate)
+            $options['defaultDate']=$endDefaultDate;
         $endOptions = json_encode($options + ['useCurrent' => false]);
 
         $script = <<<EOT
