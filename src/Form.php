@@ -1316,6 +1316,7 @@ class Form implements Renderable
             'listbox'        => Field\Listbox::class,
             'keyvaluetext'   => Field\KeyValueText::class,
             'editableSelect' => Field\EditableSelect::class,
+            'dataList'       => Field\DataList::class,
         ];
 
         foreach ($map as $abstract => $class) {
