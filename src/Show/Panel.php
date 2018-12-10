@@ -13,7 +13,7 @@ class Panel implements Renderable
      *
      * @var string
      */
-    protected $view = 'admin::show.panel';
+    protected $view = 'admin::show.panel-table';
 
     /**
      * The fields that this panel holds.

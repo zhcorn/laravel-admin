@@ -20,7 +20,7 @@ class Field implements Renderable
     /**
      * @var string
      */
-    protected $view = 'admin::show.field';
+    protected $view = 'admin::show.field-table';
 
     /**
      * Name of column.
