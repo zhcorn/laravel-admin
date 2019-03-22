@@ -18,8 +18,8 @@
     {!! $grid->renderFilter() !!}
 
     <!-- /.box-header -->
-    <div class="card-body ">
-        <table class="table table-hover table-bordered table-striped dataTable">
+    <div class="card-body table-responsive no-padding">
+        <table class="table table-hover table-bordered table-striped">
             <thead>
                 <tr>
                     @foreach($grid->columns() as $column)
